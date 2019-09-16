@@ -39,12 +39,23 @@ var label = event.target.parentElement
 var span=label.children[1]
 var editButton=label.children[2]
 var editCheck=label.children[0]
+var okButton=document.createElement("button")
     var textEditar=span.innerHTML
     var inputEdit=document.createElement("input")
     label.removeChild(span)
     label.removeChild(editButton)
     editCheck.checked=false
     label.appendChild(inputEdit)
+    label.appendChild(okButton)
+    okButton.innerHTML="Ok"
     inputEdit.value=textEditar
-    
+    okButton.addEventListener("click",function(event){
+        event.preventDefault()
+        var newText=inputEdit.value
+        label.removeChild(inputEdit)
+        span.innerHTML=newText
+        label.appendChild(span)
+        label.removeChild(okButton)
+        label.appendChild(editButton)
+    })
 }
