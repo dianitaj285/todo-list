@@ -1,0 +1,25 @@
+:root{
+    --background:#2A2542;
+    --primary:#988ACE;
+    --secondary:#B9A9F9;
+    --accent:#382B68;
+}
+
+body{
+    background-color:var(--background)
+}
+
+*{
+    font-family: 'Harmattan', sans-serif;
+}
+
+h1,h2,h3{
+    font-family: 'Esteban', serif;
+    color:var(--primary)
+}
+
+.hide {
+    display:none
+}
+
+
