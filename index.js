@@ -3,13 +3,13 @@ var ulTask = document.getElementById("ulTask")
 toDoForm.addEventListener("submit", task)
 var deleteButton = document.getElementById("deleteButton")
 deleteButton.addEventListener("click", deleteTask)
-var tasks=document.getElementById("tasks")
+var tasks = document.getElementById("tasks")
 
 
 function task(event) {
     event.preventDefault()
     if (event.target[0].value !== "") {
-        var taskForm= document.createElement("form")
+        var taskForm = document.createElement("form")
         var task = document.createElement("label")
         var inputCheck = document.createElement("input")
         var span = document.createElement("span")
@@ -17,7 +17,7 @@ function task(event) {
         var inputEdit = document.createElement("input")
         inputEdit.classList.add("hide")
         inputCheck.type = "checkbox"
-        buttonEdit.type="submit"
+        buttonEdit.type = "submit"
         tasks.appendChild(taskForm)
         taskForm.appendChild(task)
         span.innerHTML = event.target[0].value
@@ -52,13 +52,13 @@ function editTask(event) {
     span.classList.add("hide")
     inputEdit.classList.remove("hide")
     editCheck.checked = false
-    editButton.value= "Ok"
+    editButton.value = "Ok"
     inputEdit.value = textEditar
-    editButton.removeEventListener("click",editTask)
+    editButton.removeEventListener("click", editTask)
     editButton.addEventListener("click", saveTask)
 }
 
-function saveTask(event){
+function saveTask(event) {
     event.preventDefault()
     var label = event.target.parentElement
     var span = label.children[1]
@@ -68,8 +68,8 @@ function saveTask(event){
     span.innerHTML = newText
     span.classList.remove("hide")
     inputEdit.classList.add("hide")
-    editButton.value="Edit"
+    editButton.value = "Edit"
     editButton.removeEventListener("click", saveTask)
-    editButton.addEventListener("click",editTask)
+    editButton.addEventListener("click", editTask)
 
 }

@@ -5,8 +5,17 @@
     --accent:#382B68;
 }
 
+html,body{
+    height: 100%;
+}
+
 body{
-    background-color:var(--background)
+    background-color:var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 *{
