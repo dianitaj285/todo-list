@@ -12,9 +12,13 @@ function task(event) {
         var taskForm = document.createElement("form")
         var task = document.createElement("label")
         var inputCheck = document.createElement("input")
+        inputCheck.classList.add("checkBox")
         var span = document.createElement("span")
+        span.classList.add("label")
         var buttonEdit = document.createElement("input")
+        buttonEdit.classList.add("button")
         var inputEdit = document.createElement("input")
+        inputEdit.classList.add("inputBorder")
         inputEdit.classList.add("hide")
         inputCheck.type = "checkbox"
         buttonEdit.type = "submit"
@@ -32,9 +36,9 @@ function task(event) {
 }
 
 function deleteTask() {
-    Array.from(taskForm.children).forEach(function (task) {
+    Array.from(tasks.children).forEach(function (task) {
         if (task.children[0].children[0].checked) {
-            taskForm.removeChild(task)
+            tasks.removeChild(task)
         }
     });
 }
@@ -43,10 +47,12 @@ function editTask(event) {
     event.preventDefault()
     event.stopPropagation()
     var label = event.target.parentElement
+    label.classList.add("label")
     var editCheck = label.children[0]
     var span = label.children[1]
     var inputEdit = label.children[2]
     var editButton = label.children[3]
+    editButton.classList.add("button")
     var textEditar = span.innerHTML
 
     span.classList.add("hide")

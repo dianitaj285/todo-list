@@ -24,11 +24,38 @@ body{
 
 h1,h2,h3{
     font-family: 'Esteban', serif;
-    color:var(--primary)
+    color:var(--primary);
 }
 
 .hide {
-    display:none
+    display:none;
 }
 
+.inputBorder {
+border:0;
+border-bottom: 1px solid var(--primary);
+background-color: transparent;
+color: var(--secondary);
+font-size: 20px;
+}
 
+.button{
+    background-color: var(--secondary);
+    border: 0;
+    border-radius: 2px;
+    color: var(--background);
+    font-size: 16px;
+    font-weight: bold;
+    width: 60px;
+    padding: 2px;
+    margin: 5px;
+}
+
+.label{
+    color: var(--secondary);
+    font-size: 20px;
+    padding: 3px;
+}
+.checkBox{
+    background: #B9A9F9;
+}
